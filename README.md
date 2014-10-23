@@ -6,9 +6,13 @@ Grading worksheet is a simple SaaS application for HIT CST SE 2014 Fall class, w
 
 ### Add row directly
 
+![](https://raw.githubusercontent.com/hit-ugcs/lab3-4/master/public/images/row.png)
+
 You can add rows directly as many as you like by click the **And Row** button in GW homepage, and you can post the data by click the **upload** icon once you feel ready. This function is so convenient that you won't jump to a new page to add some grade record.
 
 ### Sum the score online
+
+![](https://raw.githubusercontent.com/hit-ugcs/lab3-4/master/public/images/sum.png)
 
 GW can sum the four types of score online without post it to server. It also will give you right answer if you prefer post the data to server at first.
 
