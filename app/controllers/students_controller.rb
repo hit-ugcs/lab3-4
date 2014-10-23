@@ -41,6 +41,11 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
+    params[:student][:studentid] = params[:student][:studentid].to_i
+    params[:student][:projectscore] = params[:student][:projectscore].to_i
+    params[:student][:finalscore] = params[:student][:finalscore].to_i
+    params[:student][:classscore] = params[:student][:classscore].to_i
+    params[:student][:labscore] = params[:student][:labscore].to_i
     @student = Student.new(params[:student])
 
     puts "-"*10
