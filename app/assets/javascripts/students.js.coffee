@@ -58,7 +58,7 @@ $ ->
       .append("<td><input form=\"form-#{counter}\" id='student_finalscore'   name='student[finalscore]'   type='number' data-score-field data-maxima=40 /></td>")
       .append("<td><input form=\"form-#{counter}\" id='student_labscore'     name='student[labscore]'     type='number' data-score-field data-maxima=10 /></td>")
       .append("<td><input form=\"form-#{counter}\" id='student_classscore'   name='student[classscore]'   type='number' data-score-field data-maxima=10 /></td>")
-      .append("<td><input id='final' type='number' disabled /></td>")
+      .append("<td><input form=\"form-#{counter}\" id='final' type='number' disabled /></td>")
       .append("<td><a data-submit data-form-id=\"form-#{counter}\">SUBMIT</a></td>")
       .appendTo($("tbody"))
 
@@ -66,15 +66,16 @@ $ ->
     $("input[data-score-field]").focusout ->
       ret = 0
       val = parseInt($(this).val())
+      selector = $(this).attr('form')
       maxima = parseInt($(this).attr('data-maxima')) || 0
       if val > maxima or val < 0
         $(this).addClass('error')
         $(this).focus()
       else
         $(this).removeClass('error')
-      $("input[data-score-field]").each ->
+      $("input[form=#{selector}][data-score-field]").each ->
         ret += parseInt($(this).val()) || 0
-      $("#final").val(ret)
+      $("input#final[form=#{selector}]").val(ret)
 
     $("tr#form-#{counter}>td>input#student_studentid").focus()
 
