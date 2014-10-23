@@ -1,0 +1,34 @@
+<div class="for-print">
+<h1>Grades of HIT CST SE 2014 Fall</h1>
+<table class="table">
+  <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Student Name<br />(Chinese)</th>
+        <th>Nick Name<br />(English)</th>
+        <th>Project(40%)</th>
+        <th>Fina(40%)</th>
+        <th>Lab(10%)</th>
+        <th>Class(10%)</th>
+        <th>Final</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.studentid %></td>
+          <td><%= student.studentname %></td>
+          <td><%= student.nickname %></td>
+          <td><%= student.projectscore %>%</td>
+          <td><%= student.finalscore %>%</td>
+          <td><%= student.labscore %>%</td>
+          <td><%= student.classscore %>%</td>
+          <td><%= student.final %>%</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <button type="button" id="print" class="fa fa-print btn btn-primary btn-lg"> Print</button>
+</div>

@@ -92,4 +92,8 @@ class StudentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def print_preview
+    @students = Student.all
+  end
 end

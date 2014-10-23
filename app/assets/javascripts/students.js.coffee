@@ -44,8 +44,8 @@ $ ->
       success: (data) ->
         console.log(data)
         $('tr#' + selector).replaceWith(buildRow(data))
-    #$(selector).ajaxForm(url: '/students', type: 'post')
 
+  # add a new row
   $("#new").click ->
     counter += 1
     $("#for-form")
@@ -61,6 +61,11 @@ $ ->
       .append("<td><input form=\"form-#{counter}\" id='final' type='number' disabled /></td>")
       .append("<td><a class='fa fa-upload' data-submit data-form-id=\"form-#{counter}\"></a></td>")
       .appendTo($("tbody"))
+
+  # print page
+  $("button#print").click ->
+    $(this).replaceWith("")
+    window.print()
 
     # front-end input validation
     $("input[data-score-field]").focusout ->
