@@ -2,6 +2,8 @@ Lab3::Application.routes.draw do
 
   root to: 'students#index'
 
+  get '/students/print', controller: 'students', action: 'print_preview'
+
   resources :students
 
   # The priority is based upon order of creation:

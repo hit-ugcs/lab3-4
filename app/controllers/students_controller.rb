@@ -41,13 +41,24 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
+    params[:student][:studentid] = params[:student][:studentid].to_i
+    params[:student][:projectscore] = params[:student][:projectscore].to_i
+    params[:student][:finalscore] = params[:student][:finalscore].to_i
+    params[:student][:classscore] = params[:student][:classscore].to_i
+    params[:student][:labscore] = params[:student][:labscore].to_i
+    
     @student = Student.new(params[:student])
+
+    puts "-"*10
+    puts params[:student]
+    puts "-"*10
 
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render json: @student, status: :created, location: @student }
       else
+        puts @student.errors
         format.html { render action: "new" }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
@@ -80,5 +91,9 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url }
       format.json { head :no_content }
     end
+  end
+
+  def print_preview
+    @students = Student.all
   end
 end
