@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/bootstrap-ruby/rails-bootstrap-forms.git
+  revision: fe1c763e46cc3a1ca1c3437c3f41f998b743a6e4
+  tag: v2.0.1
+  specs:
+    bootstrap_form (2.0.1)
+
+GIT
   remote: git://github.com/guilleiguaran/sass-rails.git
   revision: 0393d9e1a6e4a776e61f16fb75f97971b9f4abd2
   branch: backport
@@ -123,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
+  bootstrap_form!
   coffee-rails (~> 3.2.1)
   font-awesome-sass (~> 4.2.0)
   jquery-rails

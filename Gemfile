@@ -19,6 +19,6 @@ gem 'uglifier', '>= 1.0.3'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'will_paginate-bootstrap'
-
+gem 'bootstrap_form', github: 'bootstrap-ruby/rails-bootstrap-forms', tag: 'v2.0.1'
 
 gem 'jquery-rails'

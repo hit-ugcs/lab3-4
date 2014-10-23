@@ -62,11 +62,6 @@ $ ->
       .append("<td><a class='fa fa-upload' data-submit data-form-id=\"form-#{counter}\"></a></td>")
       .appendTo($("tbody"))
 
-  # print page
-  $("button#print").click ->
-    $(this).replaceWith("")
-    window.print()
-
     # front-end input validation
     $("input[data-score-field]").focusout ->
       ret = 0
@@ -84,3 +79,7 @@ $ ->
 
     $("tr#form-#{counter}>td>input#student_studentid").focus()
 
+  # print page
+  $("button#print").click ->
+    $(this).replaceWith("")
+    window.print()
