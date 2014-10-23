@@ -31,7 +31,7 @@ $ ->
       .append("<td>#{jdata.labscore}%</td>")
       .append("<td>#{jdata.classscore}%</td>")
       .append("<td>#{jdata.projectscore + jdata.finalscore + jdata.labscore + jdata.classscore}%</td>")
-      .append("<td><a href='/students/#{jdata.id}'>Show</a> <a href='/students/#{jdata.id}/edit'>Edit</a> <a href='/students/#{jdata.id}' data-confirm='Are you sure?' data-method='delete' rel='nofollow'>Destroy</a></td>")
+      .append("<td><a class='fa fa-eye' href='/students/#{jdata.id}'></a> <a class='fa fa-pencil-square-o' href='/students/#{jdata.id}/edit'></a> <a class='fa fa-trash' href='/students/#{jdata.id}' data-confirm='Are you sure?' data-method='delete' rel='nofollow'></a></td>")
 
   # submit link clicked
   $('table').delegate 'a[data-submit]', 'click', ->
