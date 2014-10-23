@@ -31,7 +31,7 @@ $ ->
       .append("<td>#{jdata.labscore}%</td>")
       .append("<td>#{jdata.classscore}%</td>")
       .append("<td>#{jdata.projectscore + jdata.finalscore + jdata.labscore + jdata.classscore}%</td>")
-      .append("<td><a href='/students/#{jdata.id}'>Show</a><a href='/students/#{jdata.id}/edit'>Edit</a><a href='/students/#{jdata.id}' data-confirm='Are you sure?' data-method='delete' rel='nofollow'>Destroy</a></td>")
+      .append("<td><a href='/students/#{jdata.id}'>Show</a> <a href='/students/#{jdata.id}/edit'>Edit</a> <a href='/students/#{jdata.id}' data-confirm='Are you sure?' data-method='delete' rel='nofollow'>Destroy</a></td>")
 
   # submit link clicked
   $('table').delegate 'a[data-submit]', 'click', ->
@@ -49,7 +49,7 @@ $ ->
   $("#new").click ->
     counter += 1
     $("#for-form")
-      .append("<form action='/students.json' method='post' id=\"form-#{counter}\"></form>")
+      .append("<form action='/students.json' method='post' id=\"form-#{counter}\" class='hide'></form>")
     $("<tr id=\"form-#{counter}\"></tr>")
       .append("<td><input form=\"form-#{counter}\" id='student_studentid'    name='student[studentid]'    type='number' /></td>")
       .append("<td><input form=\"form-#{counter}\" id='student_studentname'  name='student[studentname]'  type='text' /></td>")
@@ -59,7 +59,7 @@ $ ->
       .append("<td><input form=\"form-#{counter}\" id='student_labscore'     name='student[labscore]'     type='number' data-score-field data-maxima=10 /></td>")
       .append("<td><input form=\"form-#{counter}\" id='student_classscore'   name='student[classscore]'   type='number' data-score-field data-maxima=10 /></td>")
       .append("<td><input form=\"form-#{counter}\" id='final' type='number' disabled /></td>")
-      .append("<td><a data-submit data-form-id=\"form-#{counter}\">SUBMIT</a></td>")
+      .append("<td><a class='fa fa-upload' data-submit data-form-id=\"form-#{counter}\"></a></td>")
       .appendTo($("tbody"))
 
     # front-end input validation

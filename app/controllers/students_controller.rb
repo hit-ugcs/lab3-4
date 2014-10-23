@@ -46,6 +46,7 @@ class StudentsController < ApplicationController
     params[:student][:finalscore] = params[:student][:finalscore].to_i
     params[:student][:classscore] = params[:student][:classscore].to_i
     params[:student][:labscore] = params[:student][:labscore].to_i
+    
     @student = Student.new(params[:student])
 
     puts "-"*10
