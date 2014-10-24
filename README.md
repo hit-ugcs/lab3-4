@@ -2,6 +2,8 @@
 
 Grading worksheet is a simple SaaS application for HIT CST SE 2014 Fall class, which can record students' grades. The UI and UX of GW also is fantastic.
 
+Homepage: https://grading-sheet.herokuapp.com/
+
 ## Characteristic Features
 
 ### Add row directly
