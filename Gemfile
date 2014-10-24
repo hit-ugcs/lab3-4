@@ -1,8 +1,15 @@
-source 'https://ruby.taobao.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.16'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'will_paginate'
 
 gem 'sprockets-rails', '=2.0.0.backport1'
